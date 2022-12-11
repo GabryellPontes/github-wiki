@@ -12,6 +12,7 @@ function App() {
 
   const [currentRepo, setCurrentRepo] = useState('');
   const [repos, setRepos] = useState ([]);
+  const [removeRepo, setRemoveRepo] = useState ([]);
 
 
 const handleSearchRepo = async () => {
@@ -34,7 +35,11 @@ const handleSearchRepo = async () => {
 }
 
 const handleRemoverRepo = (id) => {
-  console.log('Removendo registro', id)
+  console.log('Removendo registro', id);
+  const removeId = removeRepo.filter(repo => repo.id === id);
+  removeId.remove();
+  setRemoveRepo('');
+  return
 }
 
 
